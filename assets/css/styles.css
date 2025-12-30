@@ -1,0 +1,39 @@
+/* Minimal, clean, responsive CSS */
+:root{
+  --bg:#fff; --text:#1f2937; --muted:#6b7280; --brand:#0a66c2;
+  --surface:#f8fafc; --max:980px; --radius:16px;
+  --shadow:0 6px 24px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg)}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+.site-header,.site-footer,main{max-width:var(--max);margin:0 auto;padding:1rem}
+.site-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid #e5e7eb}
+.brand{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;text-decoration:none}
+.site-nav{display:flex;gap:1rem;flex-wrap:wrap}
+.site-nav a[aria-current="page"]{font-weight:700}
+.menu-toggle{display:none}
+.hero{padding:2rem 0}
+h1{margin:.25rem 0;font-size:clamp(1.75rem,3vw,2.5rem)}
+.tagline{color:var(--muted);margin:0 0 .5rem}
+.lead{font-size:1.1rem}
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:999px;background:var(--brand);color:#fff;font-weight:600;box-shadow:var(--shadow);margin-right:.5rem}
+.btn:hover{filter:brightness(.95);text-decoration:none}
+.btn-ghost{background:transparent;color:var(--brand);border:2px solid var(--brand)}
+.section-title{margin-top:2rem}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;align-items:stretch}
+.grid>*{grid-column:span 12}
+.card{background:var(--surface);padding:1rem;border-radius:var(--radius);box-shadow:var(--shadow)}
+.project{padding:1rem 0;border-bottom:1px solid #e5e7eb}
+.meta{list-style:none;padding:0;margin:.25rem 0 1rem;color:var(--muted)}
+.pill-list{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.pill-list li{padding:.35rem .7rem;border-radius:999px;background:#eef2ff}
+.site-footer{border-top:1px solid #e5e7eb;text-align:center;color:var(--muted)}
+@media (min-width:680px){.grid>.card{grid-column:span 4}}
+@media (max-width:720px){
+  .menu-toggle{display:inline-flex}
+  .site-nav{display:none}
+  .site-nav.open{display:flex;flex-direction:column;gap:.75rem}
+}
