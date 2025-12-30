@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matthew Gilbreath — Portfolio</title>
+  <meta name="description" content="Projects, experience, and contact details." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">MG</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="site-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="mailto:you@example.com">Contact</a>
+      <a href="Matthew_Gilbreath_Resume.pdf">Resume</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Matthew Gilbreath</h1>
+      <p class="tagline">Mechatronics & Robotics • Optics • Finance</p>
+      <p class="lead">Building robots, analyzing systems, and telling clear stories with data.</p>
+      <p>
+        <a class="btn" href="projects.html">See Projects</a>
+        <a class="btn btn-ghost" href="about.html">About Me</a>
+      </p>
+    </section>
+
+    <section class="grid">
+      <h2 class="section-title">Featured Projects</h2>
+      <article class="card">
+        <h3>Autonomous HVAC Mapper</h3>
+        <p>ROS-based mobile robot for duct mapping. Implemented PID control and sensor fusion.</p>
+        <p><a href="projects.html#hvac">Details →</a></p>
+      </article>
+      <article class="card">
+        <h3>Camera Parfocality Tests</h3>
+        <p>4K pipeline + metrics for focus retention across zoom on multiple block cameras.</p>
+        <p><a href="projects.html#parfocality">Details →</a></p>
+      </article>
+      <article class="card">
+        <h3>DCF & CAPM Pitch Decks</h3>
+        <p>Equity research with transparent models and scenarios.</p>
+        <p><a href="projects.html#pitches">Details →</a></p>
+      </article>
+    </section>
+
+    <section class="grid">
+      <h2 class="section-title">Skills</h2>
+      <ul class="pill-list">
+        <li>C / C++</li><li>Python</li><li>MATLAB</li><li>ROS</li><li>VHDL</li>
+        <li>Git</li><li>OpenCV</li><li>Econometrics</li><li>DCF/CAPM</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Matthew Gilbreath</small>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
