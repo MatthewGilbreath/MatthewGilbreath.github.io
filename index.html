@@ -1,83 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matthew Gilbreath</title>
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
+  <header class="navbar">
+    <nav class="container">
+      <div class="nav-left">
+        <a href="#home" class="logo">MG</a>
+      </div>
+      <ul class="nav-center">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://github.com/MatthewGilbreath" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/MatthewGilbreath" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="assets/Matthew%20Gilbreath%20Resume.pdf" aria-label="Download Resume" download><i class="fas fa-file-download"></i></a>
+      </div>
+    </nav>
+  </header>
 
-<header class="nav">
-  <div class="nav-left">Matthew Gilbreath</div>
+  <main>
+    <section id="home" class="hero section">
+      <div class="hero-content">
+        <img src="assets/profile_pic.jpeg" alt="Profile picture" class="profile-pic">
+        <h1>Matthew Gilbreath</h1>
+        <p class="mission">Mission statement placeholder.</p>
+      </div>
+    </section>
 
-  <nav class="nav-center">
-    <a href="#home">Home</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <a href="about.html" class="about-card">
+        <p>Short about me placeholder. Click to learn more!</p>
+      </a>
+    </section>
 
-  <div class="nav-right">
-    <a href="https://github.com/MatthewGilbreath" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/matthew-gilbreath-72a055274/" target="_blank">LinkedIn</a>
-    <a href="assets/Matthew Gilbreath Resume.pdf" target="_blank">Resume</a>
-  </div>
-</header>
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <div class="skill-bubbles">
+        <span>Skill 1</span>
+        <span>Skill 2</span>
+        <span>Skill 3</span>
+      </div>
+    </section>
 
-<section id="home" class="section hero">
-  <div class="hero-text">
-    <h1>MATTHEW<br/>GILBREATH</h1>
-    <p class="mission">
-      Engineering student focused on building robust systems, thoughtful interfaces,
-      and technically sound solutions.
-    </p>
-  </div>
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <a href="projects/project-1.html" class="project-card">
+          <img src="assets/profile_pic.jpeg" alt="Project One">
+          <div class="project-content">
+            <h3>Project One</h3>
+            <p>Brief description of Project One.</p>
+            <div class="skill-bubbles">
+              <span>Skill A</span>
+              <span>Skill B</span>
+            </div>
+          </div>
+        </a>
+        <a href="projects/project-2.html" class="project-card">
+          <img src="assets/profile_pic.jpeg" alt="Project Two">
+          <div class="project-content">
+            <h3>Project Two</h3>
+            <p>Brief description of Project Two.</p>
+            <div class="skill-bubbles">
+              <span>Skill C</span>
+              <span>Skill D</span>
+            </div>
+          </div>
+        </a>
+        <a href="projects/project-3.html" class="project-card">
+          <img src="assets/profile_pic.jpeg" alt="Project Three">
+          <div class="project-content">
+            <h3>Project Three</h3>
+            <p>Brief description of Project Three.</p>
+            <div class="skill-bubbles">
+              <span>Skill E</span>
+              <span>Skill F</span>
+            </div>
+          </div>
+        </a>
+        <a href="projects/project-4.html" class="project-card">
+          <img src="assets/profile_pic.jpeg" alt="Project Four">
+          <div class="project-content">
+            <h3>Project Four</h3>
+            <p>Brief description of Project Four.</p>
+            <div class="skill-bubbles">
+              <span>Skill G</span>
+              <span>Skill H</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
 
-  <img class="hero-image" src="assets/profile.jpg" alt="Matthew Gilbreath"/>
-</section>
+    <section id="contact" class="section alt">
+      <h2>Interested?</h2>
+      <p class="cta">Let’s talk.</p>
+      <form class="contact-form">
+        <input type="email" placeholder="you@example.com">
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <footer class="quote">
+        “A developer is never late. He commits precisely when he means to.”
+      </footer>
+    </section>
+  </main>
 
-<section id="skills" class="section bordered">
-  <h2>Skills</h2>
-  <div class="skill-bubbles">
-    <span>Robotics</span>
-    <span>Control Systems</span>
-    <span>Python</span>
-    <span>C / Embedded</span>
-    <span>MATLAB</span>
-    <span>Data Analysis</span>
-    <span>CAD</span>
-    <span>Systems Thinking</span>
-    <span>Documentation</span>
-  </div>
-</section>
-
-<section id="projects" class="section alt">
-  <h2>Projects</h2>
-
-  <div class="project-grid">
-    <a href="projects/project-1/" class="project-card">Project One</a>
-    <a href="projects/project-2/" class="project-card">Project Two</a>
-    <a href="projects/project-3/" class="project-card">Project Three</a>
-    <a href="projects/project-4/" class="project-card">Project Four</a>
-  </div>
-</section>
-
-<section id="contact" class="section bordered">
-  <h2>Interested?</h2>
-  <p class="cta">Let’s talk.</p>
-
-  <form class="contact-form">
-    <input type="email" placeholder="you@example.com"/>
-    <textarea placeholder="Message"></textarea>
-    <button type="submit">Send</button>
-  </form>
-
-  <footer class="quote">
-    “A developer is never late. He commits precisely when he means to.”
-  </footer>
-</section>
-
-<script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
