@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"/>
   <title>Project One</title>
-  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/style.css"/>
 </head>
 <body>
 
-<header class="nav-wrapper">
-  <nav class="nav">
-    <a href="../../#projects">← Back to Projects</a>
-  </nav>
+<header class="nav">
+  <a href="../../index.html">← Back</a>
 </header>
 
 <section class="section">
-  <div class="panel">
-    <h1>Project One</h1>
-    <p>Placeholder project description.</p>
-  </div>
+  <h1>Project One</h1>
+  <p>Detailed explanation goes here.</p>
 </section>
 
 </body>
