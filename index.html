@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Matthew Gilbreath</title>
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- ================= NAV ================= -->
-<header class="nav-shell">
+<header class="nav-wrapper">
   <nav class="nav">
-    <div class="nav-left">
-      <a href="#home" class="nav-brand">Matthew Gilbreath</a>
-    </div>
+    <div class="nav-left">Matthew Gilbreath</div>
 
     <div class="nav-center">
       <a href="#home">Home</a>
@@ -23,115 +20,89 @@
     </div>
 
     <div class="nav-right">
-      <a href="https://github.com/" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
-      <a href="assets/Matthew_Gilbreath_Resume.pdf" download>Resume</a>
+      <a href="https://github.com/MatthewGilbreath" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/matthew-gilbreath-72a055274/" target="_blank">LinkedIn</a>
+      <a href="assets/Matthew Gilbreath Resume.pdf" download>Resume</a>
     </div>
   </nav>
 </header>
 
 <main>
 
-<!-- ================= HERO ================= -->
-<section id="home" class="section section-hero">
-  <div class="frame">
-    <h1 class="hero-name">MATTHEW<br/>GILBREATH</h1>
-
-    <p class="hero-tagline">
-      Engineering student focused on building robust systems, thoughtful interfaces,
-      and technically sound solutions.
+<section id="home" class="section hero">
+  <div class="panel">
+    <h1>MATTHEW<br>GILBREATH</h1>
+    <p class="tagline">
+      Engineering student focused on building robust systems,
+      thoughtful interfaces, and technically sound solutions.
     </p>
-  </div>
-</section>
 
-<!-- ================= ABOUT ================= -->
-<section class="section section-about">
-  <div class="frame split">
-    <div class="about-text card">
-      <p>
-        Placeholder about text. This section explains who you are, how you think,
-        and what kind of problems you enjoy working on.
-      </p>
-      <p>
-        Keep this human, grounded, and technical — not buzzword soup.
-      </p>
-    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Placeholder about text. This section explains who you are,
+          how you think, and what kind of problems you enjoy working on.
+        </p>
+      </div>
 
-    <div class="about-photo card">
-      <img src="assets/profile.jpg" alt="Matthew Gilbreath"/>
+      <div class="about-photo">
+        <img src="assets/9E891CFC-AD93-48BB-AFFE-0DA58B54FD82_1_102_a.jpeg"
+             alt="Matthew Gilbreath">
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= SKILLS ================= -->
-<section id="skills" class="section section-skills">
-  <div class="frame">
-    <h2 class="section-title">Skills</h2>
+<section id="skills" class="section">
+  <div class="panel">
+    <h2>Skills</h2>
 
-    <div class="grid">
-      <div class="skill-card">Engineering & Hardware</div>
-      <div class="skill-card">Software Development</div>
-      <div class="skill-card">Data & Analysis</div>
-      <div class="skill-card">Modeling & Control</div>
-      <div class="skill-card">Tooling & Platforms</div>
-      <div class="skill-card">Documentation & Systems Thinking</div>
+    <div class="skill-bubbles">
+      <span>Robotics</span>
+      <span>Control Systems</span>
+      <span>Python</span>
+      <span>C / Embedded</span>
+      <span>MATLAB</span>
+      <span>Data Analysis</span>
+      <span>CAD</span>
+      <span>Systems Thinking</span>
+      <span>Documentation</span>
     </div>
   </div>
 </section>
 
-<!-- ================= PROJECTS ================= -->
-<section id="projects" class="section section-projects">
-  <div class="frame">
-    <h2 class="section-title">Projects</h2>
+<section id="projects" class="section accent">
+  <div class="panel">
+    <h2>Projects</h2>
 
     <div class="project-grid">
-      <a href="projects/project-1.html" class="project-card">
-        <h3>Project One</h3>
-        <p>One-sentence description of the problem and what you built.</p>
-      </a>
-
-      <a href="projects/project-2.html" class="project-card">
-        <h3>Project Two</h3>
-        <p>One-sentence description of the problem and what you built.</p>
-      </a>
-
-      <a href="projects/project-3.html" class="project-card">
-        <h3>Project Three</h3>
-        <p>One-sentence description of the problem and what you built.</p>
-      </a>
-
-      <a href="projects/project-4.html" class="project-card">
-        <h3>Project Four</h3>
-        <p>One-sentence description of the problem and what you built.</p>
-      </a>
+      <a href="projects/project-1/" class="project-card">Project One</a>
+      <a href="projects/project-2/" class="project-card">Project Two</a>
+      <a href="projects/project-3/" class="project-card">Project Three</a>
+      <a href="projects/project-4/" class="project-card">Project Four</a>
     </div>
   </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
-<section id="contact" class="section section-contact">
-  <div class="frame split">
+<section id="contact" class="section">
+  <div class="panel contact">
     <div class="contact-text">
       <h2>Interested?</h2>
       <h2>Let’s talk.</h2>
     </div>
 
-    <div class="contact-form card">
-      <label>Email</label>
-      <input type="email" placeholder="you@example.com"/>
-
-      <label>Message</label>
-      <textarea rows="5"></textarea>
-
-      <button>Send</button>
-    </div>
+    <form class="contact-form">
+      <input type="email" placeholder="you@example.com">
+      <textarea placeholder="Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
   </div>
 </section>
 
 </main>
 
 <footer class="footer">
-  <p>“A developer is never late. He commits precisely when he means to.”</p>
+  “A developer is never late. He commits precisely when he means to.”
 </footer>
 
 </body>
