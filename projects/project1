@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project 1 — Matthew Gilbreath</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html#projects">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">Back to Projects</span>
+      </a>
+      <nav class="nav" aria-label="Project nav">
+        <a class="nav-link" href="../index.html#home">Home</a>
+        <a class="nav-link" href="../index.html#projects">Projects</a>
+        <a class="nav-link" href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="section">
+      <div class="section-inner">
+        <p class="kicker">Project</p>
+        <h1 class="headline">Project 1</h1>
+        <p class="mission">Placeholder: project overview, goals, and what you built.</p>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3 class="card-title">Problem</h3>
+            <p class="muted">Placeholder</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">My Role</h3>
+            <p class="muted">Placeholder</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Approach</h3>
+            <p class="muted">Placeholder</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Results</h3>
+            <p class="muted">Placeholder</p>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;">
+          <a class="btn btn-ghost" href="../index.html#projects">← Back</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
