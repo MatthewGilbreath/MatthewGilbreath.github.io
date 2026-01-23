@@ -2,23 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Project One</title>
-  <link rel="stylesheet" href="../../assets/css/style.css">
+  <title>Project Two</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-<header class="nav-wrapper">
+<header class="navbar">
   <nav class="nav">
-    <a href="../../#projects">← Back to Projects</a>
+    <a href="../index.html#projects">← Back to Projects</a>
+    <div class="nav-icons">
+      <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="../assets/Matthew%20Gilbreath%20Resume.pdf" download><i class="fas fa-download"></i></a>
+    </div>
   </nav>
 </header>
-
-<section class="section">
-  <div class="panel">
-    <h1>Project One</h1>
-    <p>Placeholder project description.</p>
-  </div>
-</section>
-
+<main>
+  <section class="section">
+    <div class="panel">
+      <h1>Project Two</h1>
+      <p>Placeholder project description for Project Two.</p>
+      <div class="skills">
+        <span class="skill">Skill 1</span>
+        <span class="skill">Skill 2</span>
+        <span class="skill">Skill 3</span>
+      </div>
+    </div>
+  </section>
+</main>
 </body>
 </html>
