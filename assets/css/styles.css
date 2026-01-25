@@ -29,10 +29,13 @@ a {
 
 .navbar {
   position: sticky;
-  top: 0;
-  width: 100%;
-  background: var(--bg-dark);
-  border-bottom: 4px solid var(--border);
+  top: 0.5rem;
+  width: 95%;
+  margin: 0 auto;
+  background: var(--bg-light); /* lighter background similar to reference */
+  border: 2px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   z-index: 1000;
 }
 
@@ -82,16 +85,42 @@ a {
   font-weight: 700;
 }
 
+/* Mission statement container and lines */
 .hero .mission {
   font-size: 1.25rem;
-  max-width: 600px;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto;
   text-align: center;
-  white-space: nowrap; /* Keep mission statement on one line */
+}
+
+.hero .mission-line {
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .hero .mission {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero .mission-line {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
 }
 
 .about {
   padding: 3rem 1rem;
   text-align: center;
+}
+
+.about p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
 .about-snippet a {
@@ -119,6 +148,11 @@ a {
   justify-content: center;
   gap: 0.5rem;
   margin-top: 1rem;
+}
+
+/* Prevent horizontal scrolling */
+body {
+  overflow-x: hidden;
 }
 
 .skill-bubble {
