@@ -18,7 +18,8 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--bg-dark);
+  /* Use uploaded background image instead of solid colour */
+  background: url('assets/background1.jpg') no-repeat center center / cover;
   color: var(--text);
 }
 
@@ -83,6 +84,9 @@ a {
   font-size: 3rem;
   margin-bottom: 1rem;
   font-weight: 700;
+  /* Use a serif font and accent colour to make the name pop */
+  font-family: Georgia, serif;
+  color: var(--accent);
 }
 
 /* Mission statement container and lines */
@@ -95,6 +99,10 @@ a {
   gap: 0.5rem;
   margin: 0 auto;
   text-align: center;
+  /* Use accent colour and italic text for mission statement */
+  font-family: Georgia, serif;
+  color: var(--accent);
+  font-style: italic;
 }
 
 .hero .mission-line {
@@ -115,6 +123,15 @@ a {
 .about {
   padding: 3rem 1rem;
   text-align: center;
+}
+
+/* Box containing the about paragraphs */
+.about-box {
+  background: var(--bg-light);
+  border: 2px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-top: 1rem;
 }
 
 .about p {
@@ -166,7 +183,7 @@ body {
 
 /* Slight bulge on hover for skill pills */
 .skill-bubble:hover {
-  transform: scale(1.05);
+  transform: scale(1.10);
 }
 
 .projects {
