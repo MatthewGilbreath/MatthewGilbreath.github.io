@@ -18,9 +18,11 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  /* Use uploaded background image instead of solid colour */
-  background: url('assets/background1.jpg') no-repeat center center / cover;
+  /* Use the new background image stored in the assets folder. Adjust path relative to this CSS file. */
+  /* The CSS file lives in assets/css when deployed, so go up one directory to access background.jpg in assets */
+  background: url('../background.jpg') no-repeat center center / cover;
   color: var(--text);
+  overflow-x: hidden;
 }
 
 a {
@@ -84,9 +86,9 @@ a {
   font-size: 3rem;
   margin-bottom: 1rem;
   font-weight: 700;
-  /* Use a serif font and accent colour to make the name pop */
+  /* Use a serif font and ensure the name uses black text for readability against the new background */
   font-family: Georgia, serif;
-  color: var(--accent);
+  color: #000;
 }
 
 /* Mission statement container and lines */
@@ -99,10 +101,10 @@ a {
   gap: 0.5rem;
   margin: 0 auto;
   text-align: center;
-  /* Use accent colour and italic text for mission statement */
+  /* Match the name's serif font; remove italics and use black text for the mission statement */
   font-family: Georgia, serif;
-  color: var(--accent);
-  font-style: italic;
+  color: #000;
+  font-style: normal;
 }
 
 .hero .mission-line {
@@ -130,8 +132,12 @@ a {
   background: var(--bg-light);
   border: 2px solid var(--border);
   border-radius: 1rem;
-  padding: 1.5rem;
+  padding: 1rem;
   margin-top: 1rem;
+  /* Constrain the width for a tighter horizontal box and center it */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about p {
@@ -167,10 +173,6 @@ a {
   margin-top: 1rem;
 }
 
-/* Prevent horizontal scrolling */
-body {
-  overflow-x: hidden;
-}
 
 .skill-bubble {
   background: var(--bg-light);
@@ -280,4 +282,14 @@ body {
 .contact blockquote {
   margin-top: 2rem;
   font-style: italic;
+}
+
+/* Enhance section headers for About, Skills, and Projects */
+.about h2,
+.skills h2,
+.projects h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #000;
 }
