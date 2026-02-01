@@ -48,6 +48,6 @@ const observer = new IntersectionObserver(
 
 sections.forEach((s) => observer.observe(s));
 
-// 3) Footer year stamp
+// 3) Footer year stamp (unused on this page but kept for completeness)
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
