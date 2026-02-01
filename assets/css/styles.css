@@ -1,3 +1,12 @@
+/*
+ * Custom Stylesheet for Matthew Gilbreath’s personal site.
+ *
+ * This file is based on the original styles from the GitHub Pages repo but
+ * includes a few changes:
+ *   • Uses a CSS gradient instead of an external background image for the body
+ *   • Appends styles for a vertical timeline component on the about page
+ */
+
 :root {
   --bg-dark: #a30000; /* Slightly lighter shade of red */
   --bg-light: #333333;
@@ -18,9 +27,8 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  /* Use the new background image stored in the assets folder. Adjust path relative to this CSS file. */
-  /* The CSS file lives in assets/css when deployed, so go up one directory to access background.jpg in assets */
-  background: url('../background.jpg') no-repeat center center / cover;
+  /* Use a dark red to black gradient instead of a background image */
+  background: linear-gradient(135deg, #4b0000, #000000);
   color: var(--text);
   overflow-x: hidden;
 }
@@ -30,12 +38,13 @@ a {
   text-decoration: none;
 }
 
+/* Navigation bar */
 .navbar {
   position: sticky;
   top: 0.5rem;
   width: 95%;
   margin: 0 auto;
-  background: var(--bg-light); /* lighter background similar to reference */
+  background: var(--bg-light);
   border: 2px solid var(--border);
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
@@ -64,6 +73,7 @@ a {
   font-size: 1.5rem;
 }
 
+/* Hero Section */
 .hero {
   display: flex;
   flex-direction: column;
@@ -86,7 +96,6 @@ a {
   font-size: 3rem;
   margin-bottom: 1rem;
   font-weight: 700;
-  /* Use a serif font and ensure the name uses black text for readability against the new background */
   font-family: Georgia, serif;
   color: #000;
 }
@@ -101,7 +110,6 @@ a {
   gap: 0.5rem;
   margin: 0 auto;
   text-align: center;
-  /* Match the name's serif font; remove italics and use black text for the mission statement */
   font-family: Georgia, serif;
   color: #000;
   font-style: normal;
@@ -122,19 +130,18 @@ a {
   }
 }
 
+/* About Section */
 .about {
   padding: 3rem 1rem;
   text-align: center;
 }
 
-/* Box containing the about paragraphs */
 .about-box {
   background: var(--bg-light);
   border: 2px solid var(--border);
   border-radius: 1rem;
   padding: 1rem;
   margin-top: 1rem;
-  /* Constrain the width for a tighter horizontal box and center it */
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -160,6 +167,7 @@ a {
   transform: scale(1.05);
 }
 
+/* Skills Section */
 .skills {
   padding: 3rem 1rem;
   text-align: center;
@@ -173,7 +181,6 @@ a {
   margin-top: 1rem;
 }
 
-
 .skill-bubble {
   background: var(--bg-light);
   border: 2px solid var(--border);
@@ -183,11 +190,11 @@ a {
   transition: transform 0.2s;
 }
 
-/* Slight bulge on hover for skill pills */
 .skill-bubble:hover {
   transform: scale(1.10);
 }
 
+/* Projects Section */
 .projects {
   padding: 3rem 1rem;
   text-align: center;
@@ -214,7 +221,7 @@ a {
 
 .project-card img {
   width: 100%;
-  height: 250px; /* Increased height to better showcase full images */
+  height: 250px;
   object-fit: cover;
 }
 
@@ -234,6 +241,7 @@ a {
   padding: 0 1rem 1rem;
 }
 
+/* Contact Section */
 .contact {
   background: var(--bg-light);
   color: var(--text);
@@ -284,7 +292,7 @@ a {
   font-style: italic;
 }
 
-/* Enhance section headers for About, Skills, and Projects */
+/* Section headers enhancements */
 .about h2,
 .skills h2,
 .projects h2 {
@@ -292,4 +300,104 @@ a {
   font-weight: 700;
   margin-bottom: 1rem;
   color: #000;
+}
+
+/* Timeline Styles */
+.timeline {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline h2 {
+  text-align: left;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.timeline-container {
+  position: relative;
+  margin-left: 3rem;
+  padding-left: 2rem;
+}
+
+/* Vertical line running through timeline */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 25px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Dot on the line for each timeline entry */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 10px;
+  width: 15px;
+  height: 15px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.timeline-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--bg-light);
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.timeline-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.timeline-content {
+  background: var(--bg-light);
+  border: 2px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
+  flex: 1;
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.timeline-content ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.timeline-content li {
+  list-style-type: disc;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-content li:last-child {
+  margin-bottom: 0;
 }
