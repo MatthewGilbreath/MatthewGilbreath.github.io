@@ -171,6 +171,8 @@ a {
 .skills {
   padding: 3rem 1rem;
   text-align: center;
+  /* Ensure the skills section header isn’t hidden behind the sticky navbar when scrolled to */
+  scroll-margin-top: 5rem;
 }
 
 .skills-container {
@@ -198,6 +200,7 @@ a {
 .projects {
   padding: 3rem 1rem;
   text-align: center;
+  scroll-margin-top: 5rem;
 }
 
 .projects-grid {
@@ -248,6 +251,7 @@ a {
   padding: 3rem 1rem;
   text-align: center;
   border-top: 4px solid var(--border);
+  scroll-margin-top: 5rem;
 }
 
 .contact form {
@@ -303,10 +307,22 @@ a {
 }
 
 /* Timeline Styles */
+/*
+ * Timeline Section
+ *
+ * The timeline is rendered with a thicker vertical bar running down the page.
+ * Each entry contains a prominent circular icon centered on the bar and a
+ * description card that branches off to the right.  The design loosely
+ * follows the sketch provided by the user: large red dots connected by a
+ * continuous line on the left with content boxes extending outward.
+ */
+
 .timeline {
   padding: 3rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
+  /* Avoid being hidden by the sticky navbar when linked directly */
+  scroll-margin-top: 5rem;
 }
 
 .timeline h2 {
@@ -317,69 +333,65 @@ a {
   color: var(--text);
 }
 
+/* Container for all timeline items.  A thick vertical bar runs through it */
 .timeline-container {
   position: relative;
-  margin-left: 3rem;
-  padding-left: 2rem;
+  padding-left: 0;
+  margin-left: 0;
 }
 
-/* Vertical line running through timeline */
+/* The vertical bar on which icons are centered */
 .timeline-container::before {
   content: '';
   position: absolute;
-  left: 25px;
+  left: 40px;
   top: 0;
   bottom: 0;
-  width: 2px;
+  width: 4px;
   background: var(--accent);
 }
 
+/* Individual timeline entries */
 .timeline-item {
   position: relative;
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: flex-start;
+  margin-bottom: 3rem;
+  padding-left: 0;
 }
 
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-/* Dot on the line for each timeline entry */
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: 16px;
-  top: 10px;
-  width: 15px;
-  height: 15px;
-  background: var(--accent);
-  border-radius: 50%;
-}
-
+/* The circular icon that sits on the bar.  Its centre aligns with the bar */
 .timeline-icon {
-  width: 80px;
-  height: 80px;
+  position: absolute;
+  left: 40px;
+  top: 0;
+  width: 70px;
+  height: 70px;
+  transform: translateX(-50%);
   border-radius: 50%;
-  background: var(--bg-light);
-  border: 2px solid var(--accent);
+  /* Use the accent colour for the background so the circles appear red like in the sketch */
+  background: var(--accent);
+  /* Outline the circle subtly with the border colour */
+  border: 2px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1rem;
+  z-index: 1;
 }
 
 .timeline-icon img {
   width: 50px;
   height: 50px;
+  /* Invert and brighten the icons so they are visible on the red circle */
+  filter: invert(1);
 }
 
+/* The card containing the title and bullet points for the entry */
 .timeline-content {
+  margin-left: 100px;
   background: var(--bg-light);
   border: 2px solid var(--border);
   border-radius: 1rem;
   padding: 1rem;
-  flex: 1;
+  position: relative;
 }
 
 .timeline-content h3 {
