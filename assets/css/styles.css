@@ -27,8 +27,12 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  /* Use a dark red to black gradient instead of a background image */
-  background: linear-gradient(135deg, #4b0000, #000000);
+  /* Use a brighter red/orange gradient to better match the original aesthetic */
+  /* Use a brighter orange‑red gradient for the site background.  This gradient
+   * recalls the original colour scheme on matthewgilbreath.com: a vivid
+   * orange blending into a deep red.  If needed you can adjust these
+   * values later, but they should remain in the warm orange/red family. */
+  background: linear-gradient(135deg, #b02e0c, #3a0000);
   color: var(--text);
   overflow-x: hidden;
 }
@@ -205,8 +209,9 @@ a {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  /* Use larger minimum card widths so multiple cards fit nicely across wider screens. */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
   margin-top: 1rem;
 }
 
@@ -214,6 +219,11 @@ a {
   background: var(--bg-light);
   border: 4px solid var(--border);
   border-radius: 1rem;
+  /* Use flex layout so the image, content and skill tags stack vertically and
+   * stretch to fill the available height.  This prevents uneven rows when
+   * descriptions vary in length. */
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   transition: transform 0.2s;
 }
@@ -224,12 +234,14 @@ a {
 
 .project-card img {
   width: 100%;
-  height: 250px;
+  /* Let images maintain their aspect ratio rather than forcing a fixed height.
+   * This avoids large empty gaps if a placeholder image isn't available. */
+  height: auto;
   object-fit: cover;
 }
 
 .project-card h3 {
-  margin: 1rem;
+  margin: 1rem 1rem 0.5rem;
   font-size: 1.5rem;
 }
 
@@ -241,6 +253,9 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
+  /* Add margin to push the skill tags to the bottom of the card, ensuring all cards
+   * align in the grid even when their descriptions have different lengths. */
+  margin-top: auto;
   padding: 0 1rem 1rem;
 }
 
@@ -344,11 +359,15 @@ a {
 .timeline-container::before {
   content: '';
   position: absolute;
-  left: 40px;
+  /* Position the bar further to the right to align with the larger bubbles */
+  left: 80px;
   top: 0;
   bottom: 0;
-  width: 4px;
-  background: var(--accent);
+  /* Increase the thickness of the connecting bar so it’s roughly one third
+   * of the bubble diameter.  This dark grey bar echoes the site’s dark
+   * palette and stands out beneath the enlarged bubbles. */
+  width: 72px;
+  background: var(--bg-light);
 }
 
 /* Individual timeline entries */
@@ -361,37 +380,39 @@ a {
 /* The circular icon that sits on the bar.  Its centre aligns with the bar */
 .timeline-icon {
   position: absolute;
-  left: 40px;
+  /* Align the bubble with the centre of the thicker bar */
+  left: 80px;
   top: 0;
-  width: 70px;
-  height: 70px;
+  /* Double the bubble size to accommodate photos instead of icons */
+  width: 220px;
+  height: 220px;
   transform: translateX(-50%);
   border-radius: 50%;
-  /* Use the accent colour for the background so the circles appear red like in the sketch */
-  background: var(--accent);
-  /* Outline the circle subtly with the border colour */
+  /* Provide a subtle border so photos stand out on dark backgrounds */
   border: 2px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* Default fallback colour when no image is specified */
+  background-color: var(--bg-light);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   z-index: 1;
 }
 
 .timeline-icon img {
-  width: 50px;
-  height: 50px;
-  /* Invert and brighten the icons so they are visible on the red circle */
-  filter: invert(1);
+  /* Hide the default img element.  Each bubble uses a background image set via inline styles */
+  display: none;
 }
 
 /* The card containing the title and bullet points for the entry */
 .timeline-content {
-  margin-left: 100px;
+  /* Offset the content far enough to clear the enlarged bubbles and thick bar */
+  margin-left: 300px;
   background: var(--bg-light);
   border: 2px solid var(--border);
   border-radius: 1rem;
   padding: 1rem;
   position: relative;
+  transition: transform 0.2s ease;
 }
 
 .timeline-content h3 {
@@ -412,4 +433,51 @@ a {
 
 .timeline-content li:last-child {
   margin-bottom: 0;
+}
+
+/* Project page styles */
+.project-page {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.project-hero img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border: 4px solid var(--border);
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+.project-details {
+  background: var(--bg-light);
+  border: 2px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  line-height: 1.6;
+}
+.project-details ul {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+.project-details li {
+  margin-bottom: 0.5rem;
+}
+
+/* Expand/collapse functionality for timeline cards */
+.timeline-content:not(.expanded) ul {
+  display: none;
+}
+.timeline-content.expanded ul {
+  display: block;
+}
+
+/* Bulge the content card when hovering over the whole timeline item */
+.timeline-item:hover .timeline-content {
+  transform: scale(1.02);
 }
