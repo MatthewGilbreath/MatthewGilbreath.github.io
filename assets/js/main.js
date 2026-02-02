@@ -51,3 +51,17 @@ sections.forEach((s) => observer.observe(s));
 // 3) Footer year stamp (unused on this page but kept for completeness)
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+// 4) Timeline expand/collapse functionality
+// On the about page the timeline-content elements can be clicked to
+// reveal or hide their bullet lists.  The lists are hidden by default via CSS.
+document.addEventListener('DOMContentLoaded', () => {
+  const timelineItems = document.querySelectorAll('.timeline-content');
+  timelineItems.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      // Prevent the click from bubbling to parent timeline items
+      e.stopPropagation();
+      item.classList.toggle('expanded');
+    });
+  });
+});
